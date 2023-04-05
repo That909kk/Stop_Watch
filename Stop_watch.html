@@ -22,9 +22,9 @@
     </div>
     <script>
         var hour = 0;
-        var min = 00;
+        var min = 0;
         var sec = 0;
-        var msec = 00;
+        var msec = 0;
         var hourHeading = document.getElementById("hours");
         var minHeading = document.getElementById("minutes");
         var secHeading = document.getElementById("seconds");
@@ -42,7 +42,8 @@
                     secHeading.innerHTML = sec;
                 }
                 msec = 0;
-            } else if (sec >= 60) {
+            }
+            if (sec >= 60) {
                 min++;
                 if (min < 10) {
                     minHeading.innerHTML = "0" + min;
@@ -50,7 +51,8 @@
                     minHeading.innerHTML = min;
                 }
                 sec = 0;
-            } else if (min >= 60) {
+            }
+            if (min >= 60) {
                 hour++;
                 if (hour < 10) {
                     hourHeading.innerHTML = "0" + hour;
@@ -72,6 +74,7 @@
         }
 
         function reset() {
+            stop();
             hour = 00;
             min = 00;
             sec = 00;
@@ -80,11 +83,8 @@
             minHeading.innerHTML = "0" + min;
             secHeading.innerHTML = "0" + sec;
             msecHeading.innerHTML = "0" + msec;
-            stop();
+
         }
-
-
-
         document.getElementById("start").addEventListener("click", start);
         document.getElementById("stop").addEventListener("click", stop);
         document.getElementById("reset").addEventListener("click", reset);
