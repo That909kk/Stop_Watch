@@ -48,6 +48,11 @@
                 min = 0;
             }
         }
+
+        function start() {
+            interval = setInterval(timer, 10);
+            document.getElementById("start").disabled = true;
+        }
     </script>
 
 
