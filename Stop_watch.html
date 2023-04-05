@@ -30,6 +30,24 @@
         var secHeading = document.getElementById("seconds");
         var msecHeading = document.getElementById("milliseconds");
         var interval;
+
+        function timer() {
+            msec++;
+            msecHeading.innerHTML = msec;
+            if (msec >= 100) {
+                sec++;
+                secHeading.innerHTML = sec;
+                msec = 0;
+            } else if (sec >= 60) {
+                min++;
+                minHeading.innerHTML = min;
+                sec = 0;
+            } else if (min >= 60) {
+                hour++;
+                hourHeading.innerHTML = hour;
+                min = 0;
+            }
+        }
     </script>
 
 
