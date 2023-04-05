@@ -58,6 +58,21 @@
             clearInterval(interval);
             document.getElementById("start").disabled = false;
         }
+
+        function reset() {
+            hour = 00;
+            min = 00;
+            sec = 00;
+            msec = 00;
+            hourHeading.innerHTML = hour;
+            minHeading.innerHTML = min;
+            secHeading.innerHTML = sec;
+            msecHeading.innerHTML = msec;
+            stop();
+        }
+        document.getElementById("start").addEventListener("click", start);
+        document.getElementById("stop").addEventListener("click", stop);
+        document.getElementById("reset").addEventListener("click", reset);
     </script>
 
 
