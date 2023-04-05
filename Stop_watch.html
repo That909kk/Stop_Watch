@@ -22,9 +22,9 @@
     </div>
     <script>
         var hour = 0;
-        var min = 0;
+        var min = 00;
         var sec = 0;
-        var msec = 0;
+        var msec = 00;
         var hourHeading = document.getElementById("hours");
         var minHeading = document.getElementById("minutes");
         var secHeading = document.getElementById("seconds");
@@ -36,15 +36,27 @@
             msecHeading.innerHTML = msec;
             if (msec >= 100) {
                 sec++;
-                secHeading.innerHTML = sec;
+                if (sec < 10) {
+                    secHeading.innerHTML = "0" + sec;
+                } else {
+                    secHeading.innerHTML = sec;
+                }
                 msec = 0;
             } else if (sec >= 60) {
                 min++;
-                minHeading.innerHTML = min;
+                if (min < 10) {
+                    minHeading.innerHTML = "0" + min;
+                } else {
+                    minHeading.innerHTML = min;
+                }
                 sec = 0;
             } else if (min >= 60) {
                 hour++;
-                hourHeading.innerHTML = hour;
+                if (hour < 10) {
+                    hourHeading.innerHTML = "0" + hour;
+                } else {
+                    hourHeading.innerHTML = hour;
+                }
                 min = 0;
             }
         }
@@ -64,16 +76,20 @@
             min = 00;
             sec = 00;
             msec = 00;
-            hourHeading.innerHTML = hour;
-            minHeading.innerHTML = min;
-            secHeading.innerHTML = sec;
-            msecHeading.innerHTML = msec;
+            hourHeading.innerHTML = "0" + hour;
+            minHeading.innerHTML = "0" + min;
+            secHeading.innerHTML = "0" + sec;
+            msecHeading.innerHTML = "0" + msec;
             stop();
         }
+
+
+
         document.getElementById("start").addEventListener("click", start);
         document.getElementById("stop").addEventListener("click", stop);
         document.getElementById("reset").addEventListener("click", reset);
     </script>
+
 
 
 
