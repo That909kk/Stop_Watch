@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop_watch</title>
+</head>
+
+<body>
+    <h1>Stop_watch</h1>
+    <div id="stopwatch">
+        <div id="display">
+            <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>:<span id="milliseconds">00</span>
+        </div>
+        <div id="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    <script>
+        var hour = 0;
+        var min = 0;
+        var sec = 0;
+        var msec = 0;
+        var hourHeading = document.getElementById("hours");
+        var minHeading = document.getElementById("minutes");
+        var secHeading = document.getElementById("seconds");
+        var msecHeading = document.getElementById("milliseconds");
+        var interval;
+    </script>
+
+
+
+
+</body>
+
+</html>
